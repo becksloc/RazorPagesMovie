@@ -10,5 +10,7 @@ namespace RazorPagesMovie.Models
         public DateTime ReleaseDate { get; set; }
         public string? Genre { get; set; }
         public decimal Price { get; set; }
+        [Display(Name = "Ảnh minh họa")]
+        public string? ImageUrl { get; set; }
     }
 }
