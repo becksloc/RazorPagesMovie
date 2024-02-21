@@ -45,7 +45,7 @@ namespace RazorPagesMovie.Pages.Movies
             {
                 string fileName = UploadedFile.FileName;
                 string currentDir = Directory.GetCurrentDirectory();
-                string filePath = currentDir + "\\wwwroot\\upload\\" + fileName;
+                string filePath = Path.Combine(currentDir, "wwwroot", "upload", fileName); // for both Unix and Windows
 
                 using (var stream = System.IO.File.Create(filePath))
                 {
