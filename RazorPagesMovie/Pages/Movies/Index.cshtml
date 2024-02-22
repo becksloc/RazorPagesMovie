@@ -7,15 +7,22 @@
 
 <h1>Index</h1>
 
+@if (Model.SuccessMessage != null)
+{
+    <div class="alert alert-success" role="alert">
+        @Model.SuccessMessage
+    </div>
+}
+
 <div class="row">
     <div class="col-6">
         <a asp-page="Create">Create New</a>
     </div>
     <div class="col-6">
-        <form class="form-inline" method="post">
+        <form class="form-inline" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label asp-for="fileImport" class="control-label"></label>
-                <input asp-for="fileImport" class="form-control" />
+                <label for="fileImport" class="control-label">Chọn tệp Excel:</label>
+                <input type="file" id="fileImport" name="fileImport" class="form-control" />
             </div>
             <input type="submit" value="Import" class="btn btn-primary" />
         </form>
